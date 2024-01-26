@@ -1,18 +1,34 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import javax.tools.Tool;
+// main class where the application starts
 public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+    // global variables
+    static int correctNumber;
+    static final int MIN_NUM = 1, MAX_NUM = 100;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+    // main method to start the application
+    public static void main(String[] args) {
+        initializeGame();
+        runGame();
+        closeGame();
+    }
+    // initial game setup
+    private static void initializeGame() {
+        System.out.println("Welcome to our Guess the Number console game");
+        System.out.println("********************************************");
+        System.out.println("I have randomized a number between " + MIN_NUM + " and " + MAX_NUM + "!");
+        System.out.println("Can you guess the number?");
+
+        correctNumber = Tools.genRandomInt(MIN_NUM, MAX_NUM);
+//        System.out.println("A random number is " + correctNumber);
+    }
+    // run the GTN game
+    private static void runGame() {
+        int guessedNumber = Tools.getIntFromConsole("Please enter a positive number!");
+        guessedNumber = Tools.getIntFromConsole("Take a guess at the number!" , MIN_NUM, MAX_NUM);
+//        System.out.println("Random number: " + correctNumber + " - your guess: " + guessedNumber);
+    }
+    // close the game
+    private static void closeGame() {
+        System.out.println("Good-bye!!");
     }
 }
-
-// hi
-// Draedn
