@@ -1,3 +1,11 @@
+/*
+
+TITLE: GuessNumero
+AUTHOR: Draedn Groves
+DATE: Jan.26th/2024
+PURPOSE: Creating a simple game.
+
+*/
 import javax.tools.Tool;
 // main class where the application starts
 public class Main {
@@ -23,12 +31,25 @@ public class Main {
     }
     // run the GTN game
     private static void runGame() {
-        int guessedNumber = Tools.getIntFromConsole("Please enter a positive number!");
-        guessedNumber = Tools.getIntFromConsole("Take a guess at the number!" , MIN_NUM, MAX_NUM);
-//        System.out.println("Random number: " + correctNumber + " - your guess: " + guessedNumber);
+//      int guessedNumber = Tools.getIntFromConsole("Please enter a positive number!");
+        int guessedNumber = Tools.getIntFromConsole("Take a guess at the number!" , MIN_NUM, MAX_NUM);
+//      System.out.println("Random number: " + correctNumber + " - your guess: " + guessedNumber);
+        while (guessedNumber != correctNumber){
+            System.out.println("That's not the right number! Guess again.. ");
+            guessedNumber = Tools.getIntFromConsole("Take another guess! " , MIN_NUM, MAX_NUM);
+            if(guessedNumber < correctNumber){
+                System.out.println("That's too low... ");
+
+            }else{
+                System.out.println("That's too high! ");
+            }
+
+
+        }
+        System.out.println("You got it!");
     }
     // close the game
     private static void closeGame() {
-        System.out.println("Good-bye!!");
+        System.out.println("Thanks for playing! :D ");
     }
 }

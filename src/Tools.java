@@ -1,3 +1,12 @@
+/*
+
+TITLE: GuessNumero
+AUTHOR: Draedn Groves
+DATE: Jan.26th/2024
+PURPOSE: Tools for: Creating a simple game.
+
+*/
+
 import java.util.Scanner;
 // the main container class for our various tools that we will build
 public class Tools {
@@ -12,9 +21,9 @@ public class Tools {
         int myInt = lowerBound - 1;
         while (myInt < lowerBound || myInt > upperBound) {
             myInt = getValidInteger(inputString);
-//            if (myInt < lowerBound || myInt > upperBound) {
-//                System.out.println("That number is not in the correct range");
-//            }
+            if (myInt < lowerBound || myInt > upperBound) {
+                System.out.println("That number is not in the correct range");
+            }
         }
         return myInt;
     }
